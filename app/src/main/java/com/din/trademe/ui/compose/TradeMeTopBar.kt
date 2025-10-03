@@ -3,6 +3,7 @@ package com.din.trademe.ui.compose
 import android.widget.Toast
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -31,13 +32,13 @@ fun TradeMeTopAppBar(modifier: Modifier = Modifier, currentScreen: AppScreens){
             IconButton(onClick = {
                 Toast.makeText(context, "Search clicked", Toast.LENGTH_SHORT).show()
             }) {
-                Icon(ImageVector.vectorResource(id = R.drawable.search), contentDescription = stringResource(
+                Icon(ImageVector.vectorResource(id = R.drawable.search), tint = MaterialTheme.colorScheme.tertiary, contentDescription = stringResource(
                     R.string.search))
             }
             IconButton(onClick = {
                 Toast.makeText(context, "Cart clicked", Toast.LENGTH_SHORT).show()
             }) {
-                Icon(ImageVector.vectorResource(id = R.drawable.cart), contentDescription = stringResource(
+                Icon(ImageVector.vectorResource(id = R.drawable.cart), tint = MaterialTheme.colorScheme.tertiary, contentDescription = stringResource(
                     R.string.shopping_cart))
             }
         }
