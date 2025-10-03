@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TradeMe</string>
+    <string name="listing">Listing</string>
+    <string name="watchlist">Watchlist</string>
+    <string name="my_trade_me">My Trade Me</string>
+    <string name="browse">Browse</string>
+    <string name="search">Search Item</string>
+    <string name="shopping_cart">Shopping Cart</string>
+</resources>
