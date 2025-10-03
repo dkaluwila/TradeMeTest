@@ -24,10 +24,9 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.din.trademe.R
 import com.din.trademe.data.model.ListingItemResponse
-import com.din.trademe.data.model.ListingsResponse
 
 @Composable
-fun ListingItem(item: ListingItemResponse, onItemClick: () -> Unit) {
+fun TradeMeListingItem(item: ListingItemResponse, onItemClick: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth().height(128.dp),
@@ -103,7 +102,7 @@ fun ListingItem(item: ListingItemResponse, onItemClick: () -> Unit) {
 @Preview(showBackground = true)
 @Composable
 fun ListingItemPreview() {
-    ListingItem(
+    TradeMeListingItem(
         item = ListingItemResponse(
             listingId = 123456,
             title = "A Great Item for Sale",

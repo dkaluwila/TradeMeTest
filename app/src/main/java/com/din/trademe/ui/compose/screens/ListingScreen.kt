@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.din.trademe.data.ListingDataUiState
 import com.din.trademe.viewmodel.MainViewModel
-import com.din.trademe.ui.compose.ListingItem
+import com.din.trademe.ui.compose.TradeMeListingItem
 
 @Composable
 fun ListingScreen(
@@ -40,7 +40,7 @@ fun ListingScreen(
                     .fillMaxSize().padding(16.dp)
             ) {
                 items((uiState as ListingDataUiState.Success).listingItems) { item ->
-                    ListingItem(
+                    TradeMeListingItem(
                         item = item,
                         onItemClick = { onItemClick(item.listingId.toString(),item.title) }
                     )
