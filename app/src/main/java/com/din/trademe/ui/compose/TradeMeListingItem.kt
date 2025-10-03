@@ -29,7 +29,8 @@ import com.din.trademe.data.model.ListingItemResponse
 fun TradeMeListingItem(item: ListingItemResponse, onItemClick: () -> Unit) {
     Column(
         modifier = Modifier
-            .fillMaxWidth().height(128.dp),
+            .fillMaxWidth()
+            .height(128.dp),
     ) {
         HorizontalDivider(thickness = 2.dp, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.12f), modifier = Modifier.padding(top = 3.dp, bottom = 3.dp))
         Row (modifier = Modifier.clickable(onClick = onItemClick)){
@@ -55,11 +56,13 @@ fun TradeMeListingItem(item: ListingItemResponse, onItemClick: () -> Unit) {
                 )
                 Row(
                     modifier = Modifier
-                        .fillMaxWidth().fillMaxHeight(),
+                        .fillMaxWidth()
+                        .fillMaxHeight(),
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.Bottom
                 ) {
-                    Column(modifier = Modifier.weight(1f)) {
+                    // This Column will display the primary price (either current bid or asking price)
+                    Column(modifier = Modifier.padding(end = 8.dp)) {
                         Text(
                             text = item.priceDisplay,
                             style = MaterialTheme.typography.bodyLarge,
@@ -67,15 +70,18 @@ fun TradeMeListingItem(item: ListingItemResponse, onItemClick: () -> Unit) {
                             modifier = Modifier.padding(top = 8.dp)
                         )
                         Text(
-                            text = "Reserved Met",
+                            // If it's a classified, show "Asking Price", otherwise it's an auction, show "Current price"
+                            text = if (item.isClassified) "Asking Price" else "Current Price",
                             style = MaterialTheme.typography.bodySmall,
                         )
-
                     }
-                    if (item.hasBuyNow) {
-                        Column(modifier = Modifier.weight(1f)) {
+
+                    // This Column will only be displayed if the item is an auction AND has a "Buy Now" price
+                    if (!item.isClassified && item.buyNowPrice != null && item.hasBuyNow) {
+                        Column {
                             Text(
-                                text = item.priceDisplay,
+                                // Format the buyNowPrice to a currency string.
+                                text = "$${"%.2f".format(item.buyNowPrice)}",
                                 style = MaterialTheme.typography.bodyLarge,
                                 fontWeight = FontWeight.Bold,
                                 textAlign = TextAlign.End,
