@@ -1,4 +1,6 @@
-package com.din.trademe.data.model
+package com.din.trademe.data
+
+import com.din.trademe.data.model.ListingItem
 
 sealed interface ListingDataUiState {
     object Initial : ListingDataUiState

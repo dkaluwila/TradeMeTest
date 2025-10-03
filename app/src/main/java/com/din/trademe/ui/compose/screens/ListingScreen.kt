@@ -17,7 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.din.trademe.data.model.ListingDataUiState
+import com.din.trademe.data.ListingDataUiState
 import com.din.trademe.viewmodel.MainViewModel
 import com.din.trademe.ui.compose.ListingItem
 

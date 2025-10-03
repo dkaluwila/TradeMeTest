@@ -1,7 +1,6 @@
-package com.din.trademe.data.model
+package com.din.trademe.data
 
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
+import com.din.trademe.data.model.ListingData
 
 
 interface ListingRepository {

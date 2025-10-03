@@ -2,8 +2,8 @@ package com.din.trademe.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.din.trademe.data.model.ListingDataUiState
-import com.din.trademe.data.model.ListingRepositoryImpl
+import com.din.trademe.data.ListingDataUiState
+import com.din.trademe.data.ListingRepositoryImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
