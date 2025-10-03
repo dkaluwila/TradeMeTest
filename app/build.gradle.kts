@@ -37,6 +37,9 @@ android {
     buildFeatures {
         compose = true
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
+    }
 }
 
 dependencies {
@@ -47,6 +50,14 @@ dependencies {
     implementation(libs.gson)
     // Coil for Jetpack Compose image loading
     implementation(libs.coil.compose)
+    // Retrofit for networking
+    implementation(libs.retrofit)
+    // Gson converter for Retrofit to parse JSON
+    implementation(libs.converter.gson)
+    // OkHttp for underlying network requests and logging
+    implementation(libs.okhttp)
+    // OkHttp Logging Interceptor to see request/response logs
+    implementation(libs.logging.interceptor)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

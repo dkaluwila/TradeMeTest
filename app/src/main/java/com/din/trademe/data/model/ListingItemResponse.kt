@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  * Represents a single listing item from the TradeMe API.
  */
-data class ListingItem(
+data class ListingItemResponse(
     @SerializedName("ListingId")
     val listingId: Long,
 

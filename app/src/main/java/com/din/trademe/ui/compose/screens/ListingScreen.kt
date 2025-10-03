@@ -39,7 +39,7 @@ fun ListingScreen(
                 modifier = Modifier
                     .fillMaxSize().padding(16.dp)
             ) {
-                items((uiState as ListingDataUiState.Success).listingData) { item ->
+                items((uiState as ListingDataUiState.Success).listingItems) { item ->
                     ListingItem(
                         item = item,
                         onItemClick = { onItemClick(item.listingId.toString(),item.title) }

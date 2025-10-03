@@ -23,10 +23,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.din.trademe.R
-import com.din.trademe.data.model.ListingItem
+import com.din.trademe.data.model.ListingItemResponse
+import com.din.trademe.data.model.ListingsResponse
 
 @Composable
-fun ListingItem(item: ListingItem, onItemClick: () -> Unit) {
+fun ListingItem(item: ListingItemResponse, onItemClick: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth().height(128.dp),
@@ -103,7 +104,7 @@ fun ListingItem(item: ListingItem, onItemClick: () -> Unit) {
 @Composable
 fun ListingItemPreview() {
     ListingItem(
-        item = ListingItem(
+        item = ListingItemResponse(
             listingId = 123456,
             title = "A Great Item for Sale",
             region = "Auckland",
